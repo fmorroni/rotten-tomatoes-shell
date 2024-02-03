@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/main.js",
+    "build-and-run": "pnpm run build; pnpm run start"
+  },
+	"devDependencies": {
+		"prettier": "^3.2.4",
+		"typescript": "^5.3.3"
+	}
+}
