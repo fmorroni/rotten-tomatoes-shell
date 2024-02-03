@@ -9,13 +9,17 @@ params.append("x-algolia-application-id", "79FRDP12PN");
 
 const apiUrl = `${baseUrl}?${params.toString()}`;
 
+const filter = new URLSearchParams();
+filter.append("isEmsSearchable", "1");
+filter.append("hitsPerPage", "10");
+// filter.append('analyticsTags', '["header_search"]')
+// filter.append('clickAnalytics', 'true')
 const reqBody = {
   requests: [
     {
       indexName: "content_rt",
       query: "",
-      params:
-        "filters=isEmsSearchable%20%3D%201&hitsPerPage=5&analyticsTags=%5B%22header_search%22%5D&clickAnalytics=true",
+      params: "filters=" + filter.toString(),
     },
   ],
 };
@@ -53,8 +57,8 @@ export async function getMediaInfo(
 
   if (!res?.results?.[0].hits) return null;
 
-  let resHits: Array<any> = res?.results?.[0].hits
-  if (year)  resHits = resHits.filter(hit => hit.releaseYear === year)
+  let resHits: Array<any> = res?.results?.[0].hits;
+  if (year) resHits = resHits.filter((hit) => hit.releaseYear === year);
 
   const hits: MediaInfo[] = [];
   for (let i = 0; i < resHits.length && i < limit; ++i) {
@@ -93,6 +97,6 @@ function parseHit(hit: any): MediaInfo {
     genres,
     runTime: { hours, mins },
     rating,
-    cast: castCrew.cast,
+    cast: castCrew?.cast,
   };
 }
