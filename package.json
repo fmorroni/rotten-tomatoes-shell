@@ -1,11 +1,19 @@
 {
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "start": "node ./dist/main.js",
     "build-and-run": "pnpm run build; pnpm run start"
   },
-	"devDependencies": {
-		"prettier": "^3.2.4",
-		"typescript": "^5.3.3"
-	}
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "commander": "^11.1.0"
+  },
+  "bin": {
+    "rotten-tomatoes": "./dist/rotten-tomatoes.js"
+  }
 }

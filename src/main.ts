@@ -20,7 +20,25 @@ const reqBody = {
   ],
 };
 
-async function getInfo(mediaTitle: string) {
+interface MediaInfo {
+  type: string;
+  title: string;
+  description: string;
+  releaseYear: string;
+  genres: Array<string>;
+  runTime: {
+    hours: number;
+    mins: number;
+  };
+  rating: {
+    audienceScore: number;
+    criticsScore: number;
+    tmScore: number;
+  };
+  cast: Array<string>;
+}
+
+export async function getMediaInfo(mediaTitle: string): Promise<MediaInfo> {
   reqBody.requests[0].query = mediaTitle;
   const {
     type,
