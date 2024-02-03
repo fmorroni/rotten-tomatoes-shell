@@ -2,9 +2,7 @@
   "name": "rotten-tomatoes",
   "type": "module",
   "scripts": {
-    "build": "tsc",
-    "start": "node ./dist/main.js",
-    "build-and-run": "pnpm run build; pnpm run start"
+    "build": "tsc"
   },
   "devDependencies": {
     "@commander-js/extra-typings": "^11.1.0",
