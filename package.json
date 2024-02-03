@@ -7,6 +7,7 @@
     "build-and-run": "pnpm run build; pnpm run start"
   },
   "devDependencies": {
+    "@commander-js/extra-typings": "^11.1.0",
     "@types/node": "^20.11.16",
     "prettier": "^3.2.4",
     "typescript": "^5.3.3"
