@@ -1,4 +1,5 @@
 {
+  "name": "rotten-tomatoes",
   "type": "module",
   "scripts": {
     "build": "tsc",
