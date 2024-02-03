@@ -1,7 +1,7 @@
 import { Command } from "@commander-js/extra-typings";
 const program = new Command();
 
-import { getMediaInfo } from "./main.js";
+import { getMediaInfo } from "./lib.js";
 
 program
   .description("Get media info from rotten tomatoes")
